@@ -1,0 +1,98 @@
+{
+  "product_name": "Acme SaaS",
+  "goal": "Improve user retention for a SaaS product",
+  "executive_summary": "For Acme SaaS, the clearest opportunities are search performance issues and dashboard usability friction. These areas combine repeated customer friction, meaningful severity, and alignment to the goal of Improve user retention for a SaaS product. Prioritizing them is likely to create the strongest near-term impact.",
+  "priorities": [
+    {
+      "rank": 1,
+      "initiative": "Improve Search Performance",
+      "rationale": "This area stands out because it combines repeated customer feedback, meaningful severity, and measurable alignment to the goal of Improve user retention for a SaaS product. Representative evidence includes: Search is slow; Search takes forever to load. Recommended timeframe: next quarter.",
+      "expected_impact": "Improving search performance is likely to support 30-day retention by reducing friction in a high-signal user workflow.",
+      "tradeoff": "Prioritizing search performance means lower-signal requests may be deferred unless they are strategically important or tied to key customer commitments.",
+      "supporting_themes": [
+        "Search Performance Issues"
+      ]
+    },
+    {
+      "rank": 2,
+      "initiative": "Improve Dashboard Usability",
+      "rationale": "This area stands out because it combines repeated customer feedback, meaningful severity, and measurable alignment to the goal of Improve user retention for a SaaS product. Representative evidence includes: Dashboard is confusing; Too many clicks to export reports. Recommended timeframe: next quarter.",
+      "expected_impact": "Improving dashboard usability is likely to support 30-day retention by reducing friction in a high-signal user workflow.",
+      "tradeoff": "Prioritizing dashboard usability means lower-signal requests may be deferred unless they are strategically important or tied to key customer commitments.",
+      "supporting_themes": [
+        "Dashboard Usability Friction"
+      ]
+    }
+  ],
+  "now_next_later": {
+    "now": [
+      "Improve Search Performance"
+    ],
+    "next": [
+      "Improve Dashboard Usability"
+    ],
+    "later": []
+  },
+  "theme_scores": [
+    {
+      "theme_id": "theme-1",
+      "theme_label": "Search Performance Issues",
+      "frequency_score": 18,
+      "severity_score": 5,
+      "sentiment_score": 1,
+      "metric_alignment_score": 1.33,
+      "total_score": 9.02,
+      "evidence_count": 2,
+      "evidence": [
+        {
+          "feedback_id": "fb-1",
+          "text": "Search is slow",
+          "severity": 5,
+          "votes": 8,
+          "feature_area": "search"
+        },
+        {
+          "feedback_id": "fb-4",
+          "text": "Search takes forever to load",
+          "severity": 5,
+          "votes": 10,
+          "feature_area": "search"
+        }
+      ]
+    },
+    {
+      "theme_id": "theme-0",
+      "theme_label": "Dashboard Usability Friction",
+      "frequency_score": 15,
+      "severity_score": 3.73,
+      "sentiment_score": 1,
+      "metric_alignment_score": 1.33,
+      "total_score": 7.5,
+      "evidence_count": 3,
+      "evidence": [
+        {
+          "feedback_id": "fb-2",
+          "text": "Dashboard is confusing",
+          "severity": 4,
+          "votes": 6,
+          "feature_area": "dashboard"
+        },
+        {
+          "feedback_id": "fb-3",
+          "text": "Too many clicks to export reports",
+          "severity": 3,
+          "votes": 4,
+          "feature_area": "export"
+        },
+        {
+          "feedback_id": "fb-5",
+          "text": "The UI is hard to navigate",
+          "severity": 4,
+          "votes": 5,
+          "feature_area": "dashboard"
+        }
+      ]
+    }
+  ],
+  "debug": null
+}

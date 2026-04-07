@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Onboarding drop-off",
+    "value": 40,
+    "direction": "lower_is_better",
+    "importance": 5,
+    "related_area": "dashboard onboarding",
+    "note": "Many users leave after the first session"
+  },
+  {
+    "name": "Search usage rate",
+    "value": 78,
+    "direction": "higher_is_better",
+    "importance": 5,
+    "related_area": "search",
+    "note": "Search is one of the highest-usage workflows"
+  },
+  {
+    "name": "Weekly export completion",
+    "value": 54,
+    "direction": "higher_is_better",
+    "importance": 3,
+    "related_area": "reporting export",
+    "note": "Exports matter but are not the main retention driver"
+  }
+]
