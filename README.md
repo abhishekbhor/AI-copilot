@@ -10,7 +10,7 @@ It answers a practical question:
 
 > Given user feedback, product signals, and a strategic goal, what should we build next and why?
 
-That makes it a strong portfolio project for AI Product Management, decision intelligence, and applied LLM systems.
+I exhibits decision intelligence and applied LLM systems.
 
 ## Features
 
