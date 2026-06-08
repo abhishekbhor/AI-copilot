@@ -2,6 +2,33 @@
 
 AI Product Copilot is a lightweight decision-intelligence system for product teams. It ingests customer feedback and product metrics, detects recurring themes, scores them against business goals, and returns a prioritized roadmap with rationale.
 
+### What it achieves end-to-end
+- Ingest multi-source feedback (tickets, reviews, surveys, support chats, sales calls, etc.)
+- Cluster feedback into recurring themes (TF-IDF + KMeans)
+- Score each theme on frequency, severity, sentiment, and metric alignment
+- Rank initiatives against the stated product goal
+- Output an executive summary, ranked priorities, and a Now/Next/Later roadmap
+
+### Multi-signal scoring model
+
+Themes are ranked using a **weighted blend** (from `scoring.py`):
+
+| Signal | Weight | What it measures |
+|--------|--------|------------------|
+| Frequency | 40% | How often the issue appears (via votes) |
+| Severity | 25% | How painful it is |
+| Sentiment | 15% | How negative the feedback is |
+| Metric alignment | 20% | Overlap with important product metrics |
+
+This is intentionally **simple and explainable**, which matters for PM trust.
+
+### Goal-aware recommendations
+Input includes a ProductGoal (summary, target metric, timeframe). Rationale, impact, and the executive summary are tied to that goal — e.g. “Improving search performance is likely to support retention…”
+
+### Debug mode
+
+With include_debug: true, one gets raw theme scores, clustering notes, and scoring explanations — useful for auditing why something ranked high.
+
 ## Why this project matters
 
 This repo is built to demonstrate product-facing AI, not just chatbot behavior.
