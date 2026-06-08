@@ -82,48 +82,104 @@ python run_demo.py
 ## Example API request
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/api/copilot/analyze" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "product_name": "Acme SaaS",
-    "goal": {
-      "summary": "Improve retention by reducing friction in high-usage workflows",
-      "target_metric": "retention",
-      "timeframe": "this quarter"
+{
+  "product_name": "Acme SaaS",
+  "goal": {
+    "summary": "Improve retention by reducing friction in high-usage workflows",
+    "target_metric": "retention",
+    "timeframe": "this quarter"
+  },
+  "feedback": [
+    {
+      "id": "fb-1",
+      "source": "ticket",
+      "text": "Search is slow when I try to find customer records during onboarding.",
+      "sentiment": -0.8,
+      "severity": 5,
+      "feature_area": "search",
+      "customer_segment": "SMB",
+      "votes": 7
     },
-    "feedback": [
-      {
-        "id": "fb-1",
-        "source": "ticket",
-        "text": "Search is slow when I try to find customer records during onboarding.",
-        "sentiment": -0.8,
-        "severity": 5,
-        "feature_area": "search",
-        "votes": 7
-      },
-      {
-        "id": "fb-2",
-        "source": "review",
-        "text": "The dashboard is confusing and I cannot tell which actions matter most.",
-        "sentiment": -0.7,
-        "severity": 4,
-        "feature_area": "dashboard",
-        "votes": 5
-      }
-    ],
-    "metrics": [
-      {
-        "name": "Search usage rate",
-        "value": 78,
-        "direction": "higher_is_better",
-        "importance": 5,
-        "related_area": "search",
-        "note": "Search is one of the highest-usage workflows"
-      }
-    ],
-    "max_recommendations": 3,
-    "include_debug": true
-  }'
+    {
+      "id": "fb-2",
+      "source": "review",
+      "text": "The dashboard is confusing and I cannot tell which actions matter most.",
+      "sentiment": -0.7,
+      "severity": 4,
+      "feature_area": "dashboard",
+      "customer_segment": "mid_market",
+      "votes": 5
+    },
+    {
+      "id": "fb-3",
+      "source": "survey",
+      "text": "Too many clicks to export a report. It feels tedious every week.",
+      "sentiment": -0.5,
+      "severity": 3,
+      "feature_area": "reporting",
+      "customer_segment": "enterprise",
+      "votes": 4
+    },
+    {
+      "id": "fb-4",
+      "source": "support_chat",
+      "text": "Search results take several seconds and often timeout for large accounts.",
+      "sentiment": -0.9,
+      "severity": 5,
+      "feature_area": "search",
+      "customer_segment": "enterprise",
+      "votes": 6
+    },
+    {
+      "id": "fb-5",
+      "source": "interview",
+      "text": "New users struggle to understand the dashboard after signup.",
+      "sentiment": -0.6,
+      "severity": 4,
+      "feature_area": "dashboard",
+      "customer_segment": "SMB",
+      "votes": 4
+    },
+    {
+      "id": "fb-6",
+      "source": "sales_call",
+      "text": "Enterprise prospects ask for faster search during demos.",
+      "sentiment": -0.4,
+      "severity": 4,
+      "feature_area": "search",
+      "customer_segment": "enterprise",
+      "votes": 3
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Onboarding drop-off",
+      "value": 40,
+      "direction": "lower_is_better",
+      "importance": 5,
+      "related_area": "dashboard onboarding",
+      "note": "Many users leave after the first session"
+    },
+    {
+      "name": "Search usage rate",
+      "value": 78,
+      "direction": "higher_is_better",
+      "importance": 5,
+      "related_area": "search",
+      "note": "Search is one of the highest-usage workflows"
+    },
+    {
+      "name": "Weekly export completion",
+      "value": 54,
+      "direction": "higher_is_better",
+      "importance": 3,
+      "related_area": "reporting export",
+      "note": "Exports matter but are not the main retention driver"
+    }
+  ],
+  "max_recommendations": 3,
+  "include_debug": true
+}
 ```
 
 ## Example response shape
